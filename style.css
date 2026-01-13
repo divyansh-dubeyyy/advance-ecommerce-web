@@ -1,0 +1,82 @@
+body {
+    background: #0b0f1a;
+}
+/* ================================
+   NAVBAR HOVER DROPDOWN (DESKTOP)
+================================ */
+
+/* Desktop only */
+@media (min-width: 992px) {
+
+  .dropdown-hover:hover > .dropdown-menu {
+      display: block;
+      margin-top: 0;
+  }
+
+  .dropdown-hover > .dropdown-menu {
+      display: none;
+      animation: fadeIn 0.2s ease-in-out;
+  }
+}
+@media (min-width: 992px) {
+  .dropdown-hover > .dropdown-menu {
+      pointer-events: auto;
+  }
+}
+
+
+/* Smooth animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-home {
+    min-height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+                url("images/home-bg.jpg") center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background: #ff3b3b;
+    color: #fff;
+}
+/* ================================
+   REMOVE STUCK FOCUS / ACTIVE BOX
+================================ */
+
+/* Remove focus outline */
+.navbar .nav-link:focus,
+.navbar .nav-link:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove active background */
+.navbar .nav-link:active,
+.navbar .nav-link.show {
+    background-color: transparent !important;
+}
+
+/* Remove dropdown toggle focus border */
+.navbar .dropdown-toggle::after {
+    outline: none !important;
+}
+
+/* Optional: keep text color normal after hover */
+.navbar .nav-link {
+    background-color: transparent !important;
+}
+/* Red hover ONLY on hover */
+.navbar .nav-link:hover {
+    color: #ff3b3b !important;
+}
