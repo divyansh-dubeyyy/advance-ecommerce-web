@@ -1,64 +1,83 @@
-let isLoggedIn = false;
+/* ================= CART LOGIC ================= */
 
-document.getElementById("loginBtn")?.addEventListener("click", () => {
-    isLoggedIn = true;
-    alert("Login successful!");
-});
+// Get cart from localStorage
+function getCart() {
+    return JSON.parse(localStorage.getItem("cart")) || [];
+}
 
+// Save cart
+function saveCart(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+}
+
+// Add to cart
 document.querySelectorAll(".add-cart").forEach(btn => {
     btn.addEventListener("click", () => {
-        if (!isLoggedIn) {
-            const modal = new bootstrap.Modal(
-                document.getElementById("loginModal")
-            );
-            modal.show();
-        } else {
-            alert("Added to cart!");
-        }
+        const card = btn.closest(".card");
+        const name = card.querySelector("h5").innerText;
+        const price = parseInt(card.querySelector(".text-success").innerText.replace("₹",""));
+
+        let cart = getCart();
+        cart.push({ name, price });
+        saveCart(cart);
+
+        alert("Added to cart!");
     });
 });
 
-function calculatePrice() {
-    let cpu = parseInt(document.getElementById("cpu").value);
-    let ram = parseInt(document.getElementById("ram").value);
-    let gpu = parseInt(document.getElementById("gpu").value);
-
-    document.getElementById("totalPrice").innerText =
-        "Total: ₹" + (cpu + ram + gpu);
+// Update cart count badge
+function updateCartCount() {
+    const cart = getCart();
+    const badge = document.querySelector(".cart-badge");
+    if (badge) badge.innerText = cart.length;
 }
-// Enable hover dropdown without breaking mobile
-document.querySelectorAll('.dropdown-hover').forEach(dropdown => {
-    dropdown.addEventListener('mouseenter', function () {
-        if (window.innerWidth >= 992) {
-            bootstrap.Dropdown.getOrCreateInstance(
-                this.querySelector('.dropdown-toggle')
-            ).show();
-        }
+
+// Load cart on cart page
+function loadCartPage() {
+    const cart = getCart();
+    const cartDiv = document.getElementById("cartItems");
+    const totalEl = document.getElementById("cartTotal");
+
+    if (!cartDiv) return;
+
+    cartDiv.innerHTML = "";
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        total += item.price;
+
+        cartDiv.innerHTML += `
+        <div class="d-flex justify-content-between align-items-center bg-black p-3 mb-2 rounded">
+          <div>
+            <strong>${item.name}</strong><br>
+            ₹${item.price}
+          </div>
+          <button class="btn btn-sm btn-danger" onclick="removeItem(${index})">Remove</button>
+        </div>
+        `;
     });
 
-    dropdown.addEventListener('mouseleave', function () {
-        if (window.innerWidth >= 992) {
-            bootstrap.Dropdown.getOrCreateInstance(
-                this.querySelector('.dropdown-toggle')
-            ).hide();
-        }
-    });
-});
-// Desktop hover dropdown support
-document.querySelectorAll('.dropdown-hover').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-        if (window.innerWidth >= 992) {
-            bootstrap.Dropdown.getOrCreateInstance(
-                item.querySelector('.dropdown-toggle')
-            ).show();
-        }
-    });
+    totalEl.innerText = total;
+}
 
-    item.addEventListener('mouseleave', () => {
-        if (window.innerWidth >= 992) {
-            bootstrap.Dropdown.getOrCreateInstance(
-                item.querySelector('.dropdown-toggle')
-            ).hide();
-        }
-    });
+// Remove item
+function removeItem(index) {
+    let cart = getCart();
+    cart.splice(index, 1);
+    saveCart(cart);
+    loadCartPage();
+}
+
+// Clear cart
+function clearCart() {
+    localStorage.removeItem("cart");
+    loadCartPage();
+    updateCartCount();
+}
+
+// Auto load
+document.addEventListener("DOMContentLoaded", () => {
+    updateCartCount();
+    loadCartPage();
 });

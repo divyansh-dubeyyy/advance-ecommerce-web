@@ -80,3 +80,105 @@ body {
 .navbar .nav-link:hover {
     color: #ff3b3b !important;
 }
+/* ================= ICONS (CART + ACCOUNT) ================= */
+
+.nav-icon {
+    color: #e5e7eb;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-icon:hover {
+    color: #ff3b3b;
+    transform: scale(1.1);
+}
+
+/* Cart badge */
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: #ff3b3b;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: 600;
+}
+
+/* ================= HERO CAROUSEL ================= */
+
+/* ================= HERO CAROUSEL FIX ================= */
+
+.hero-slide {
+    height: 70vh;                 /* reduced height */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;     /* 🔥 FIX: image fits inside */
+    background-color: #000;       /* fills empty space nicely */
+}
+@media (max-width: 768px) {
+    .hero-slide {
+        height: 45vh;
+        background-size: contain;
+    }
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-overlay h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.hero-overlay p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #cbd5f5;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-slide {
+        height: 60vh;
+    }
+
+    .hero-overlay h1 {
+        font-size: 2rem;
+    }
+}
+/* FIX NAVBAR CLICK ISSUE */
+.navbar {
+    position: relative;
+    z-index: 1050;
+}
+
+/* Cart & account icons */
+.nav-icon {
+    font-size: 1.4rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1100;
+    position: relative;
+}
+
+.nav-icon:hover {
+    color: #0dcaf0;
+}
+
+/* Ensure carousel stays behind navbar */
+.carousel {
+    z-index: 1;
+}
+
