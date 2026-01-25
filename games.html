@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Games - PC Builder Store</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-dark text-light">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+  <a class="navbar-brand fw-bold text-info" href="index.html">PC Builder</a>
+
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="nav">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+      <li class="nav-item dropdown dropdown-hover">
+        <a class="nav-link dropdown-toggle" href="#">PC</a>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li><a class="dropdown-item" href="#">PC Components</a></li>
+          <li><a class="dropdown-item" href="#">PC Builds</a></li>
+          <li><a class="dropdown-item" href="#">PC Accessories</a></li>
+          <li><a class="dropdown-item" href="#">Prebuilt PCs</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item"><a class="nav-link" href="games.html">Games</a></li>
+      <li class="nav-item"><a class="nav-link" href="customize.html">Customize</a></li>
+    </ul>
+
+    <!-- Icons -->
+    <div class="d-flex align-items-center gap-3">
+      <button class="nav-icon btn btn-link" data-bs-toggle="modal" data-bs-target="#loginModal" style="border: none; background: none; padding: 0;">
+        <i class="bi bi-person-circle" style="font-size: 1.5rem;"></i>
+      </button>
+      <a href="cart.html" class="nav-icon position-relative">
+        <i class="bi bi-cart3"></i>
+        <span class="cart-badge">0</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- GAMES SECTION -->
+<div class="container py-5">
+  <h2 class="mb-2">Available Games</h2>
+  <p class="text-secondary mb-5">Check out our latest gaming titles available for PC</p>
+
+  <div class="row g-4">
+
+    <!-- RESIDENT EVIL NEW GAME -->
+    <div class="col-md-4">
+      <div class="card bg-dark text-light shadow">
+        <img src="/images/Resident-Evil-Requiem-PS5.jpg" class="card-img-top" alt="Resident Evil" style="height: 300px; object-fit: cover;">
+        <div class="card-body text-center">
+          <h5>Resident Evil: Infinite Darkness</h5>
+          <p class="text-warning fw-bold">New Release 2026</p>
+          <p class="text-success fw-bold">₹3999</p>
+          <button class="btn btn-info add-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- LAST OF US -->
+    <div class="col-md-4">
+      <div class="card bg-dark text-light shadow">
+        <img src="images/lou.jpeg" class="card-img-top" alt="The Last of Us" style="height: 300px; object-fit: cover;">
+        <div class="card-body text-center">
+          <h5>The Last of Us Part I</h5>
+          <p class="text-info fw-bold">Action Adventure</p>
+          <p class="text-success fw-bold">₹2999</p>
+          <button class="btn btn-info add-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- GHOST OF TSUSHIMA -->
+    <div class="col-md-4">
+      <div class="card bg-dark text-light shadow">
+        <img src="images/got.jpeg" class="card-img-top" alt="Ghost of Tsushima" style="height: 300px; object-fit: cover;">
+        <div class="card-body text-center">
+          <h5>Ghost of Tsushima Director's Cut</h5>
+          <p class="text-success fw-bold">Action Adventure</p>
+          <p class="text-success fw-bold">₹2499</p>
+          <button class="btn btn-info add-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="text-center text-light py-4 bg-black mt-5">
+  <p>&copy; 2026 PC Builder Store. All rights reserved.</p>
+  <p class="text-secondary small">Built for PC enthusiasts | Quality components guaranteed</p>
+</footer>
+
+<!-- LOGIN MODAL -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark border-secondary">
+      <div class="modal-header border-secondary">
+        <h5 class="modal-title">Login to PC Builder</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="loginUser(event)">
+          <div class="mb-3">
+            <label class="form-label">Username</label>
+            <input type="text" id="loginUser" class="form-control bg-dark text-light border-secondary" placeholder="admin" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" id="loginPass" class="form-control bg-dark text-light border-secondary" placeholder="1234" required>
+          </div>
+          <p class="text-secondary small">Demo: Username: <b>admin</b> | Password: <b>1234</b></p>
+          <button type="submit" class="btn btn-info w-100">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
