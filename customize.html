@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="bg-dark text-light">
 
 <!-- NAVBAR (SAME AS HOME) -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
@@ -27,7 +27,7 @@
 </nav>
 
 <!-- CUSTOMIZE SECTION -->
-<div class="container-fluid py-5 text-light">
+<div class="container-fluid py-5">
   <div class="container">
 
     <h2 class="mb-2">Customize Your PC</h2>
@@ -38,7 +38,7 @@
       <!-- CPU -->
       <div class="col-md-6">
         <label class="mb-2 fw-semibold">Processor (CPU)</label>
-        <select id="cpu" class="form-select form-select-lg bg-dark text-light">
+        <select id="cpu" class="form-select form-select-lg bg-dark text-light border-secondary">
           <option value="0">Choose CPU</option>
           <option value="15000">AMD Ryzen 5</option>
           <option value="22000">Intel Core i5</option>
@@ -48,27 +48,27 @@
       <!-- CPU COOLER -->
       <div class="col-md-6">
         <label class="mb-2 fw-semibold">Cooling System (CPU Cooler)</label>
-        <select class="form-select form-select-lg bg-dark text-light">
-          <option>Choose Cooler</option>
-          <option>Air Cooler</option>
-          <option>Liquid Cooler</option>
+        <select id="cooler" class="form-select form-select-lg bg-dark text-light border-secondary">
+          <option value="0">Choose Cooler</option>
+          <option value="2500">Air Cooler</option>
+          <option value="5000">Liquid Cooler</option>
         </select>
       </div>
 
       <!-- MOTHERBOARD -->
       <div class="col-md-6">
         <label class="mb-2 fw-semibold">Motherboard</label>
-        <select class="form-select form-select-lg bg-dark text-light">
-          <option>Choose Motherboard</option>
-          <option>B550</option>
-          <option>B660</option>
+        <select id="motherboard" class="form-select form-select-lg bg-dark text-light border-secondary">
+          <option value="0">Choose Motherboard</option>
+          <option value="12000">B550</option>
+          <option value="15000">B660</option>
         </select>
       </div>
 
       <!-- RAM -->
       <div class="col-md-6">
         <label class="mb-2 fw-semibold">Memory (RAM)</label>
-        <select id="ram" class="form-select form-select-lg bg-dark text-light">
+        <select id="ram" class="form-select form-select-lg bg-dark text-light border-secondary">
           <option value="0">Choose RAM</option>
           <option value="4000">8GB DDR4</option>
           <option value="8000">16GB DDR4</option>
@@ -78,37 +78,37 @@
       <!-- M.2 SSD -->
       <div class="col-md-6">
         <label class="mb-2 fw-semibold">M.2 NVMe SSD</label>
-        <select class="form-select form-select-lg bg-dark text-light">
-          <option>Select M.2 SSD</option>
-          <option>512GB NVMe</option>
-          <option>1TB NVMe</option>
+        <select id="ssd" class="form-select form-select-lg bg-dark text-light border-secondary">
+          <option value="0">Select M.2 SSD</option>
+          <option value="5000">512GB NVMe</option>
+          <option value="9000">1TB NVMe</option>
         </select>
       </div>
 
       <!-- SATA SSD -->
       <div class="col-md-6">
         <label class="mb-2 fw-semibold">SATA SSD</label>
-        <select class="form-select form-select-lg bg-dark text-light">
-          <option>Select SATA SSD</option>
-          <option>512GB SSD</option>
-          <option>1TB SSD</option>
+        <select id="satassd" class="form-select form-select-lg bg-dark text-light border-secondary">
+          <option value="0">Select SATA SSD</option>
+          <option value="4000">512GB SSD</option>
+          <option value="7500">1TB SSD</option>
         </select>
       </div>
 
       <!-- HDD -->
       <div class="col-md-6">
         <label class="mb-2 fw-semibold">Hard Disk Drive (HDD)</label>
-        <select class="form-select form-select-lg bg-dark text-light">
-          <option>Select HDD</option>
-          <option>1TB</option>
-          <option>2TB</option>
+        <select id="hdd" class="form-select form-select-lg bg-dark text-light border-secondary">
+          <option value="0">Select HDD</option>
+          <option value="3000">1TB</option>
+          <option value="5500">2TB</option>
         </select>
       </div>
 
       <!-- GPU -->
       <div class="col-md-6">
         <label class="mb-2 fw-semibold">Graphics Card (GPU)</label>
-        <select id="gpu" class="form-select form-select-lg bg-dark text-light">
+        <select id="gpu" class="form-select form-select-lg bg-dark text-light border-secondary">
           <option value="0">Choose GPU</option>
           <option value="18000">GTX 1660</option>
           <option value="35000">RTX 3060</option>
@@ -192,10 +192,14 @@
       Calculate Price
     </button>
 
-    <h4 class="mt-3" id="totalPrice">Total: ₹0</h4>
+    <h4 class="mt-3 text-info" id="totalPrice">Total: ₹0</h4>
 
   </div>
 </div>
+
+<footer class="text-center text-light py-3 bg-black mt-5">
+  © 2026 PC Builder Store
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>

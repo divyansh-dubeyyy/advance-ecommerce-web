@@ -1,91 +1,57 @@
+/* ================= BASE ================= */
 body {
     background: #0b0f1a;
+    color: #e5e7eb;
+    font-family: "Segoe UI", Arial, sans-serif;
 }
-/* ================================
-   NAVBAR HOVER DROPDOWN (DESKTOP)
-================================ */
 
-/* Desktop only */
+/* ================= NAVBAR ================= */
+.navbar {
+    position: relative;
+    z-index: 1050;
+}
+
+/* Desktop hover dropdown */
 @media (min-width: 992px) {
-
-  .dropdown-hover:hover > .dropdown-menu {
-      display: block;
-      margin-top: 0;
-  }
-
-  .dropdown-hover > .dropdown-menu {
-      display: none;
-      animation: fadeIn 0.2s ease-in-out;
-  }
-}
-@media (min-width: 992px) {
-  .dropdown-hover > .dropdown-menu {
-      pointer-events: auto;
-  }
-}
-
-
-/* Smooth animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(6px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .dropdown-hover:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0;
     }
 }
 
-.hero-home {
-    min-height: 80vh;
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
-                url("images/home-bg.jpg") center/cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+/* Navbar links */
+.navbar .nav-link {
+    background: transparent !important;
+    transition: color 0.25s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #ff3b3b !important;
+}
+
+/* Dropdown items */
+.dropdown-menu .dropdown-item {
+    transition: background 0.2s ease;
 }
 
 .dropdown-menu .dropdown-item:hover {
     background: #ff3b3b;
     color: #fff;
 }
-/* ================================
-   REMOVE STUCK FOCUS / ACTIVE BOX
-================================ */
 
-/* Remove focus outline */
+/* Remove focus/active box */
 .navbar .nav-link:focus,
-.navbar .nav-link:focus-visible {
+.navbar .nav-link:active {
     outline: none !important;
     box-shadow: none !important;
 }
 
-/* Remove active background */
-.navbar .nav-link:active,
-.navbar .nav-link.show {
-    background-color: transparent !important;
-}
-
-/* Remove dropdown toggle focus border */
-.navbar .dropdown-toggle::after {
-    outline: none !important;
-}
-
-/* Optional: keep text color normal after hover */
-.navbar .nav-link {
-    background-color: transparent !important;
-}
-/* Red hover ONLY on hover */
-.navbar .nav-link:hover {
-    color: #ff3b3b !important;
-}
-/* ================= ICONS (CART + ACCOUNT) ================= */
-
+/* ================= NAV ICONS ================= */
 .nav-icon {
     color: #e5e7eb;
     font-size: 1.5rem;
     text-decoration: none;
+    position: relative;
     transition: color 0.25s ease, transform 0.25s ease;
 }
 
@@ -109,15 +75,15 @@ body {
 
 /* ================= HERO CAROUSEL ================= */
 
-/* ================= HERO CAROUSEL FIX ================= */
-
 .hero-slide {
-    height: 70vh;                 /* reduced height */
+    height: 70vh;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;     /* 🔥 FIX: image fits inside */
-    background-color: #000;       /* fills empty space nicely */
+    background-size: contain;   /* image fits nicely */
+    background-color: #000;     /* fills empty space */
 }
+
+/* Mobile */
 @media (max-width: 768px) {
     .hero-slide {
         height: 45vh;
@@ -125,60 +91,52 @@ body {
     }
 }
 
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-}
-
-.hero-overlay h1 {
-    font-size: 3rem;
-    font-weight: 700;
-}
-
-.hero-overlay p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    color: #cbd5f5;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .hero-slide {
-        height: 60vh;
-    }
-
-    .hero-overlay h1 {
-        font-size: 2rem;
-    }
-}
-/* FIX NAVBAR CLICK ISSUE */
+/* Keep navbar clickable */
 .navbar {
     position: relative;
     z-index: 1050;
 }
 
-/* Cart & account icons */
-.nav-icon {
-    font-size: 1.4rem;
-    color: #fff;
-    cursor: pointer;
-    z-index: 1100;
-    position: relative;
-}
-
-.nav-icon:hover {
-    color: #0dcaf0;
-}
-
-/* Ensure carousel stays behind navbar */
+/* Carousel stays behind navbar */
 .carousel {
     z-index: 1;
 }
 
+
+/* ================= PRODUCTS ================= */
+.product-img {
+    height: 180px;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.card {
+    border-radius: 12px;
+}
+
+.card-body {
+    padding: 12px;
+}
+
+.card h5 {
+    font-size: 1rem;
+}
+
+.card p {
+    font-size: 0.95rem;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #000;
+}
+
+.footer-link {
+    color: #cbd5f5;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-link:hover {
+    color: #0dcaf0;
+}
