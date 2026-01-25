@@ -55,46 +55,63 @@
 
 <!-- GAMES SECTION -->
 <div class="container py-5">
-  <h2 class="mb-2">Available Games</h2>
-  <p class="text-secondary mb-5">Check out our latest gaming titles available for PC</p>
+  <div class="text-center mb-5">
+    <h1 class="display-5 fw-bold mb-2"><span class="text-gradient">Gaming Library</span></h1>
+    <p class="text-secondary fs-5">Discover our curated collection of AAA gaming titles</p>
+  </div>
 
   <div class="row g-4">
 
     <!-- RESIDENT EVIL NEW GAME -->
     <div class="col-lg-3 col-md-6">
-      <div class="card bg-dark text-light shadow">
-        <img src="/images/Resident-Evil-Requiem-PS5.jpg" class="card-img-top" alt="Resident Evil" style="height: 300px; object-fit: cover;">
+      <div class="card bg-dark text-light shadow game-card">
+        <div class="position-relative">
+          <img src="/images/Resident-Evil-Requiem-PS5.jpg" class="card-img-top" alt="Resident Evil" style="height: 300px; object-fit: cover;">
+          <span class="badge bg-danger position-absolute top-0 end-0 m-2">NEW</span>
+        </div>
         <div class="card-body text-center">
-          <h5>Resident Evil: Infinite Darkness</h5>
-          <p class="text-warning fw-bold">New Release 2026</p>
-          <p class="text-success fw-bold">₹3999</p>
-          <button class="btn btn-info add-cart">Add to Cart</button>
+          <h5 class="text-info">Resident Evil: Infinite Darkness</h5>
+          <p class="text-warning fw-bold small">New Release 2026</p>
+          <div class="price-section mb-3">
+            <p class="text-success fw-bold fs-5">₹3999</p>
+          </div>
+          <button class="btn btn-gradient add-cart w-100" data-price="3999" data-name="Resident Evil: Infinite Darkness">Add to Cart</button>
         </div>
       </div>
     </div>
 
     <!-- LAST OF US -->
     <div class="col-lg-3 col-md-6">
-      <div class="card bg-dark text-light shadow">
-        <img src="images/lou.jpeg" class="card-img-top" alt="The Last of Us" style="height: 300px; object-fit: cover;">
+      <div class="card bg-dark text-light shadow game-card">
+        <div class="position-relative">
+          <img src="images/lou.jpeg" class="card-img-top" alt="The Last of Us" style="height: 300px; object-fit: cover;">
+          <span class="badge bg-primary position-absolute top-0 end-0 m-2">POPULAR</span>
+        </div>
         <div class="card-body text-center">
-          <h5>The Last of Us Part I</h5>
-          <p class="text-info fw-bold">Action Adventure</p>
-          <p class="text-success fw-bold">₹2999</p>
-          <button class="btn btn-info add-cart">Add to Cart</button>
+          <h5 class="text-info">The Last of Us Part I</h5>
+          <p class="text-primary fw-bold small">Action Adventure</p>
+          <div class="price-section mb-3">
+            <p class="text-success fw-bold fs-5">₹2999</p>
+          </div>
+          <button class="btn btn-gradient add-cart w-100" data-price="2999" data-name="The Last of Us Part I">Add to Cart</button>
         </div>
       </div>
     </div>
 
     <!-- GHOST OF TSUSHIMA -->
     <div class="col-lg-3 col-md-6">
-      <div class="card bg-dark text-light shadow">
-        <img src="images/got.jpeg" class="card-img-top" alt="Ghost of Tsushima" style="height: 300px; object-fit: cover;">
+      <div class="card bg-dark text-light shadow game-card">
+        <div class="position-relative">
+          <img src="images/got.jpeg" class="card-img-top" alt="Ghost of Tsushima" style="height: 300px; object-fit: cover;">
+          <span class="badge bg-warning position-absolute top-0 end-0 m-2" style="color: #000;">BESTSELLER</span>
+        </div>
         <div class="card-body text-center">
-          <h5>Ghost of Tsushima Director's Cut</h5>
-          <p class="text-success fw-bold">Action Adventure</p>
-          <p class="text-success fw-bold">₹2499</p>
-          <button class="btn btn-info add-cart">Add to Cart</button>
+          <h5 class="text-info">Ghost of Tsushima Director's Cut</h5>
+          <p class="text-warning fw-bold small">Action Adventure</p>
+          <div class="price-section mb-3">
+            <p class="text-success fw-bold fs-5">₹2499</p>
+          </div>
+          <button class="btn btn-gradient add-cart w-100" data-price="2499" data-name="Ghost of Tsushima Director's Cut">Add to Cart</button>
         </div>
       </div>
     </div>

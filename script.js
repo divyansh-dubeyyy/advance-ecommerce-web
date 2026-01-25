@@ -3,15 +3,25 @@
 // Get cart from localStorage
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// Add to cart buttons (home page)
+// Add to cart buttons (home page and games page)
 document.querySelectorAll(".add-cart").forEach(button => {
     button.addEventListener("click", () => {
-        const card = button.closest(".card");
-
-        const name = card.querySelector("h5").innerText;
-        const price = parseInt(
-            card.querySelector("p").innerText.replace("₹", "")
-        );
+        let name, price;
+        
+        // Check if button has data attributes (for games)
+        if (button.hasAttribute("data-price") && button.hasAttribute("data-name")) {
+            name = button.getAttribute("data-name");
+            price = parseInt(button.getAttribute("data-price"));
+        } else {
+            // Fallback for product cards (home page)
+            const card = button.closest(".card");
+            name = card.querySelector("h5").innerText;
+            
+            // Get the last p tag which contains price
+            const pTags = card.querySelectorAll("p");
+            const lastP = pTags[pTags.length - 1];
+            price = parseInt(lastP.innerText.replace("₹", ""));
+        }
 
         cart.push({ name, price });
         localStorage.setItem("cart", JSON.stringify(cart));

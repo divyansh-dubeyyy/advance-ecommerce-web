@@ -620,3 +620,86 @@ footer {
         border: 1px solid #000;
     }
 }
+
+/* ================= MODERN UI/UX STYLING ================= */
+
+/* Text Gradient */
+.text-gradient {
+    background: linear-gradient(135deg, #00d4ff, #0099ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Modern Button Gradient */
+.btn-gradient {
+    background: linear-gradient(135deg, #00d4ff, #0099ff);
+    border: none;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(135deg, #0099ff, #0066ff);
+    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+    transform: translateY(-2px);
+    color: white;
+}
+
+.btn-gradient:active {
+    transform: translateY(0);
+}
+
+/* Game Card Styling */
+.game-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    position: relative;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 212, 255, 0.25);
+}
+
+.game-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), transparent);
+    pointer-events: none;
+}
+
+.game-card img {
+    transition: transform 0.5s ease;
+}
+
+.game-card:hover img {
+    transform: scale(1.08);
+}
+
+/* Price Section */
+.price-section {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 153, 255, 0.05));
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Card Enhancement */
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: #00d4ff;
+}
+    }
+}
