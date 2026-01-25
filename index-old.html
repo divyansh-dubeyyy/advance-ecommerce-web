@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PC Builder Store - Build Your Perfect PC</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-dark text-light">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+  <a class="navbar-brand fw-bold text-info" href="index.html">🎮 PC Builder</a>
+
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="nav">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+      <li class="nav-item dropdown dropdown-hover">
+        <a class="nav-link" href="#" data-bs-toggle="dropdown" aria-expanded="false">PC</a>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li><a class="dropdown-item" href="#">PC Components</a></li>
+          <li><a class="dropdown-item" href="#">PC Builds</a></li>
+          <li><a class="dropdown-item" href="#">PC Accessories</a></li>
+          <li><a class="dropdown-item" href="#">Prebuilt PCs</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item"><a class="nav-link" href="games.html">Games</a></li>
+      <li class="nav-item"><a class="nav-link" href="customize.html">Customize</a></li>
+    </ul>
+
+    <!-- Icons -->
+    <div class="d-flex align-items-center gap-3">
+      <button class="nav-icon btn btn-link" data-bs-toggle="modal" data-bs-target="#loginModal" style="border: none; background: none; padding: 0;">
+        <i class="bi bi-person-circle" style="font-size: 1.5rem;"></i>
+      </button>
+      <a href="cart.html" class="nav-icon position-relative">
+        <i class="bi bi-cart3"></i>
+        <span class="cart-badge">0</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- SEARCH BAR -->
+<div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <input
+        type="text"
+        id="searchInput"
+        class="form-control form-control-lg bg-dark text-light border-secondary"
+        placeholder="🔍 Search CPUs, GPUs, RAM..."
+        onkeyup="searchProducts()"
+      >
+    </div>
+  </div>
+</div>
+
+<!-- HERO CAROUSEL -->
+<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <div class="hero-slide" style="background-image: url('static/images/slide1.png'); background-size: cover; background-position: center; height: 70vh;"></div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="hero-slide" style="background-image: url('static/images/slide2.jpg'); background-size: contain; background-position: center; height: 70vh;"></div>
+    </div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<!-- PRODUCTS SECTION -->
+<div class="container py-5">
+  <h3 class="mb-4"><i class="bi bi-cpu"></i> Popular CPUs</h3>
+
+  <div class="row g-4">
+
+    <div class="col-lg-3 col-md-6">
+      <div class="card bg-dark text-light shadow">
+        <img src="images/cpu1.jpg" class="product-img">
+        <div class="card-body text-center">
+          <h5>AMD Ryzen 5 5600X</h5>
+          <p class="text-success fw-bold">₹15,000</p>
+          <small class="text-secondary">6 Cores • 3.7 GHz</small>
+          <button class="btn btn-info add-cart w-100 mt-3">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+      <div class="card bg-dark text-light shadow">
+        <img src="images/cpu2.jpg" class="product-img">
+        <div class="card-body text-center">
+          <h5>Intel Core i5 12400F</h5>
+          <p class="text-success fw-bold">₹17,500</p>
+          <small class="text-secondary">6 Cores • 3.4 GHz</small>
+          <button class="btn btn-info add-cart w-100 mt-3">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+      <div class="card bg-dark text-light shadow">
+        <img src="images/cpu3.jpg" class="product-img">
+        <div class="card-body text-center">
+          <h5>AMD Ryzen 7 5800X</h5>
+          <p class="text-success fw-bold">₹24,000</p>
+          <small class="text-secondary">8 Cores • 3.8 GHz</small>
+          <button class="btn btn-info add-cart w-100 mt-3">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- GPU PRODUCTS -->
+<div class="container py-5">
+  <h3 class="mb-4"><i class="bi bi-image"></i> Graphics Cards</h3>
+
+  <div class="row g-4">
+
+    <div class="col-lg-3 col-md-6">
+      <div class="card bg-dark text-light shadow">
+        <img src="images/gpu1.jpg" class="product-img">
+        <div class="card-body text-center">
+          <h5>RTX 3060 Ti</h5>
+          <p class="text-success fw-bold">₹35,000</p>
+          <small class="text-secondary">8GB GDDR6</small>
+          <button class="btn btn-info add-cart w-100 mt-3">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+      <div class="card bg-dark text-light shadow">
+        <img src="images/gpu2.jpg" class="product-img">
+        <div class="card-body text-center">
+          <h5>RTX 4070</h5>
+          <p class="text-success fw-bold">₹55,000</p>
+          <small class="text-secondary">12GB GDDR6X</small>
+          <button class="btn btn-info add-cart w-100 mt-3">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+      <div class="card bg-dark text-light shadow">
+        <img src="images/gpu3.jpg" class="product-img">
+        <div class="card-body text-center">
+          <h5>RTX 4090</h5>
+          <p class="text-success fw-bold">₹140,000</p>
+          <small class="text-secondary">24GB GDDR6X</small>
+          <button class="btn btn-info add-cart w-100 mt-3">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- RAM PRODUCTS -->
+<div class="container py-5">
+  <h3 class="mb-4"><i class="bi bi-memory"></i> Memory (RAM)</h3>
+
+  <div class="row g-4">
+
+    <div class="col-lg-3 col-md-6">
+      <div class="card bg-dark text-light shadow">
+        <img src="images/ram1.jpg" class="product-img">
+        <div class="card-body text-center">
+          <h5>Corsair 16GB DDR4</h5>
+          <p class="text-success fw-bold">₹8,500</p>
+          <small class="text-secondary">3600MHz</small>
+          <button class="btn btn-info add-cart w-100 mt-3">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+      <div class="card bg-dark text-light shadow">
+        <img src="images/ram2.jpg" class="product-img">
+        <div class="card-body text-center">
+          <h5>G.Skill 32GB DDR4</h5>
+          <p class="text-success fw-bold">₹16,000</p>
+          <small class="text-secondary">3200MHz</small>
+          <button class="btn btn-info add-cart w-100 mt-3">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+      <div class="card bg-dark text-light shadow">
+        <img src="images/ram3.jpg" class="product-img">
+        <div class="card-body text-center">
+          <h5>Kingston 64GB DDR5</h5>
+          <p class="text-success fw-bold">₹45,000</p>
+          <small class="text-secondary">5600MHz</small>
+          <button class="btn btn-info add-cart w-100 mt-3">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="text-center text-light py-4 bg-black mt-5">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-md-4">
+        <h5 class="text-info mb-3">About Us</h5>
+        <p class="text-secondary small">Your trusted source for high-quality PC components and custom builds.</p>
+      </div>
+      <div class="col-md-4">
+        <h5 class="text-info mb-3">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">About</a></li>
+          <li><a href="#" class="footer-link">Contact</a></li>
+          <li><a href="#" class="footer-link">Support</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5 class="text-info mb-3">Follow Us</h5>
+        <div class="d-flex gap-2 justify-content-center">
+          <a href="#" class="footer-link"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="footer-link"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="footer-link"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="border-secondary">
+    <p>&copy; 2026 PC Builder Store. All rights reserved.</p>
+    <p class="text-secondary small">Built for PC enthusiasts | Quality components guaranteed</p>
+  </div>
+</footer>
+
+<!-- LOGIN MODAL -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark border-secondary">
+      <div class="modal-header border-secondary">
+        <h5 class="modal-title"><i class="bi bi-person-lock"></i> Login to PC Builder</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs nav-tabs-dark mb-3" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="email-tab" data-bs-toggle="tab" data-bs-target="#email-login" type="button" role="tab">
+              <i class="bi bi-envelope"></i> Email
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="phone-tab" data-bs-toggle="tab" data-bs-target="#phone-login" type="button" role="tab">
+              <i class="bi bi-telephone"></i> Phone
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <!-- EMAIL LOGIN -->
+          <div class="tab-pane fade show active" id="email-login" role="tabpanel">
+            <form onsubmit="loginWithEmail(event)">
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" id="loginEmail" class="form-control bg-dark text-light border-secondary" placeholder="demo@example.com" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" id="loginPass" class="form-control bg-dark text-light border-secondary" placeholder="1234" required>
+              </div>
+              <p class="text-secondary small"><i class="bi bi-info-circle"></i> Demo: Email: <b>demo@example.com</b> | Password: <b>1234</b></p>
+              <button type="submit" class="btn btn-info w-100"><i class="bi bi-check-circle"></i> Login</button>
+            </form>
+          </div>
+
+          <!-- PHONE LOGIN -->
+          <div class="tab-pane fade" id="phone-login" role="tabpanel">
+            <form onsubmit="loginWithPhone(event)">
+              <div class="mb-3">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" id="loginPhone" class="form-control bg-dark text-light border-secondary" placeholder="9876543210" pattern="[0-9]{10}" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">OTP</label>
+                <input type="text" id="loginOTP" class="form-control bg-dark text-light border-secondary" placeholder="123456" maxlength="6" required>
+              </div>
+              <p class="text-secondary small"><i class="bi bi-info-circle"></i> Demo: Phone: <b>9876543210</b> | OTP: <b>123456</b></p>
+              <button type="submit" class="btn btn-info w-100"><i class="bi bi-check-circle"></i> Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html></
