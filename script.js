@@ -69,7 +69,45 @@ function clearCart() {
     }
 }
 
-// LOGIN SYSTEM (FAKE)
+// LOGIN SYSTEM (FAKE) - EMAIL LOGIN
+function loginWithEmail(event) {
+    event.preventDefault();
+    const email = document.getElementById("loginEmail").value;
+    const pass = document.getElementById("loginPass").value;
+
+    if (email === "demo@example.com" && pass === "1234") {
+        localStorage.setItem("loggedIn", "true");
+        localStorage.setItem("userName", email);
+        alert("Login successful!");
+        const loginModal = bootstrap.Modal.getInstance(document.getElementById("loginModal"));
+        if (loginModal) loginModal.hide();
+        document.getElementById("loginEmail").value = "";
+        document.getElementById("loginPass").value = "";
+    } else {
+        alert("Invalid credentials! Use demo@example.com / 1234");
+    }
+}
+
+// LOGIN SYSTEM (FAKE) - PHONE LOGIN
+function loginWithPhone(event) {
+    event.preventDefault();
+    const phone = document.getElementById("loginPhone").value;
+    const otp = document.getElementById("loginOTP").value;
+
+    if (phone === "9876543210" && otp === "123456") {
+        localStorage.setItem("loggedIn", "true");
+        localStorage.setItem("userName", phone);
+        alert("Login successful!");
+        const loginModal = bootstrap.Modal.getInstance(document.getElementById("loginModal"));
+        if (loginModal) loginModal.hide();
+        document.getElementById("loginPhone").value = "";
+        document.getElementById("loginOTP").value = "";
+    } else {
+        alert("Invalid credentials! Use 9876543210 / 123456");
+    }
+}
+
+// LOGIN SYSTEM (FAKE) - BACKWARD COMPATIBLE
 function loginUser(event) {
     event.preventDefault();
     const user = document.getElementById("loginUser").value;
@@ -77,19 +115,14 @@ function loginUser(event) {
 
     if (user === "admin" && pass === "1234") {
         localStorage.setItem("loggedIn", "true");
+        localStorage.setItem("userName", user);
         alert("Login successful!");
-        // Close the modal
         const loginModal = bootstrap.Modal.getInstance(document.getElementById("loginModal"));
         if (loginModal) loginModal.hide();
-        // Clear form
         document.getElementById("loginUser").value = "";
         document.getElementById("loginPass").value = "";
-        // Redirect to checkout after successful login
-        setTimeout(() => {
-            window.location.href = "checkout.html";
-        }, 500);
     } else {
-        alert("Invalid credentials! Use admin/1234");
+        alert("Invalid credentials!");
     }
 }
 

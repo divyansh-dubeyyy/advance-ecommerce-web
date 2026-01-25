@@ -264,18 +264,52 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
-        <form onsubmit="loginUser(event)">
-          <div class="mb-3">
-            <label class="form-label">Username</label>
-            <input type="text" id="loginUser" class="form-control bg-dark text-light border-secondary" placeholder="admin" required>
+        <ul class="nav nav-tabs nav-tabs-dark mb-3" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="email-tab" data-bs-toggle="tab" data-bs-target="#email-login" type="button" role="tab">
+              <i class="bi bi-envelope"></i> Email
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="phone-tab" data-bs-toggle="tab" data-bs-target="#phone-login" type="button" role="tab">
+              <i class="bi bi-telephone"></i> Phone
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <!-- EMAIL LOGIN -->
+          <div class="tab-pane fade show active" id="email-login" role="tabpanel">
+            <form onsubmit="loginWithEmail(event)">
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" id="loginEmail" class="form-control bg-dark text-light border-secondary" placeholder="demo@example.com" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" id="loginPass" class="form-control bg-dark text-light border-secondary" placeholder="1234" required>
+              </div>
+              <p class="text-secondary small"><i class="bi bi-info-circle"></i> Demo: Email: <b>demo@example.com</b> | Password: <b>1234</b></p>
+              <button type="submit" class="btn btn-info w-100"><i class="bi bi-check-circle"></i> Login</button>
+            </form>
           </div>
-          <div class="mb-3">
-            <label class="form-label">Password</label>
-            <input type="password" id="loginPass" class="form-control bg-dark text-light border-secondary" placeholder="1234" required>
+
+          <!-- PHONE LOGIN -->
+          <div class="tab-pane fade" id="phone-login" role="tabpanel">
+            <form onsubmit="loginWithPhone(event)">
+              <div class="mb-3">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" id="loginPhone" class="form-control bg-dark text-light border-secondary" placeholder="9876543210" pattern="[0-9]{10}" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">OTP</label>
+                <input type="text" id="loginOTP" class="form-control bg-dark text-light border-secondary" placeholder="123456" maxlength="6" required>
+              </div>
+              <p class="text-secondary small"><i class="bi bi-info-circle"></i> Demo: Phone: <b>9876543210</b> | OTP: <b>123456</b></p>
+              <button type="submit" class="btn btn-info w-100"><i class="bi bi-check-circle"></i> Login</button>
+            </form>
           </div>
-          <p class="text-secondary small"><i class="bi bi-info-circle"></i> Demo: Username: <b>admin</b> | Password: <b>1234</b></p>
-          <button type="submit" class="btn btn-info w-100"><i class="bi bi-check-circle"></i> Login</button>
-        </form>
+        </div>
       </div>
     </div>
   </div>
