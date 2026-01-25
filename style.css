@@ -221,7 +221,7 @@ body {
     height: 70vh;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-color: #000;
     position: relative;
     overflow: hidden;
